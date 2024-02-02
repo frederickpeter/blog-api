@@ -73,9 +73,10 @@ THIRD_PARTY_APPS = [
     "corsheaders",
     "drf_spectacular",
     "versatileimagefield",
+    "django_filters",
 ]
 
-LOCAL_APPS = ["blog_api.auth_app"]
+LOCAL_APPS = ["blog_api.auth_app", "blog_api.blog_app"]
 # https://docs.djangoproject.com/en/dev/ref/settings/#installed-apps
 INSTALLED_APPS = DJANGO_APPS + THIRD_PARTY_APPS + LOCAL_APPS
 

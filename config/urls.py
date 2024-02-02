@@ -3,9 +3,10 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import include, path
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView
-from rest_framework_nested import routers
+from rest_framework import routers
 
 from blog_api.auth_app.urls import router as auth_router
+from blog_api.blog_app.urls import router as blog_router
 from blog_api.auth_app.views import (
     LoginView,
     RefreshView,
@@ -22,6 +23,7 @@ else:
     router = routers.SimpleRouter()
 
 router.registry.extend(auth_router.registry)
+router.registry.extend(blog_router.registry)
 
 urlpatterns = [
     path("accounts/register/", register, name="register"),

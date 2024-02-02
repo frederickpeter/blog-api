@@ -1,5 +1,5 @@
 from django.conf import settings
-from rest_framework_nested import routers
+from rest_framework import routers
 
 from . import views
 
